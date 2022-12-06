@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-color: #22223B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+main{
+    background-color: #FFF;
+    padding: 2rem 3rem 0;
+    border-radius: .5rem;
+}
+main header{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.content{
+    margin: 3rem 0 2rem;
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+.section label{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+.section textarea, select, button{
+    border: none;
+    border-radius: .5rem;
+    outline: none;
+    width: 100%;
+}
+.section textarea, select{
+    padding: 1rem;
+    font-size: 1rem;
+    border: .5px solid #ccc;
+}
+.section textarea{
+    resize: none;
+    height: 10rem;
+}
+.section select{
+    cursor: pointer;
+}
+button{
+    height: 3rem;
+    background-color: #22223B;
+    color: #FFF;
+    font-size: 1rem;
+    cursor: pointer;
+}
+button:hover{
+    filter: brightness(90%);
+}
