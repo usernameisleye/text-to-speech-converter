@@ -48,6 +48,7 @@ function selectedVoice(){
         //select US English as default
         let selected = voice.name === 'Google US English' ? 'selected' : '';
 
+        //adding voice function to the end to replace the contents of the select tag(yeah, I know)
         const voiceOption = `<option value="${voice.name}" ${selected}>${voice.name} ${voice.lang}</option>`;
         selectVoice.insertAdjacentHTML('beforeend', voiceOption);
     }
