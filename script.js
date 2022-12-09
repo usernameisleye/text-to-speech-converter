@@ -10,16 +10,8 @@ speechSynthesis.addEventListener('voiceschanged', selectedVoice)
 function convertToSpeech(){
     const txtAreaValue = textArea.value
     if(txtAreaValue !== ''){
-        //if .speak method is not currently speaking
         if(!speechSynthesis.speaking){
-            let speech = new SpeechSynthesisUtterance(txtAreaValue)
-            for(let voice of speechSynthesis.getVoices()){
-                //set selected voice to speech voice, if available device voice name is same as selected voice name
-                if(voice.name === selectVoice.value){
-                    speech.voice = voice;
-                }
-            }
-            speechSynthesis.speak(speech);
+            convertText(txtAreaValue)
         }
 
         if(textArea.value.length > 100){
@@ -41,6 +33,20 @@ function convertToSpeech(){
             })
         }
     }
+}
+
+function convertText(txtValue){
+             //if .speak method is not currently speaking
+             if(!speechSynthesis.speaking){
+                let speech = new SpeechSynthesisUtterance(txtValue)
+                for(let voice of speechSynthesis.getVoices()){
+                    //set selected voice to speech voice, if available device voice name is same as selected voice name
+                    if(voice.name === selectVoice.value){
+                        speech.voice = voice;
+                    }
+                }
+                speechSynthesis.speak(speech);
+            }
 }
 
 function selectedVoice(){
